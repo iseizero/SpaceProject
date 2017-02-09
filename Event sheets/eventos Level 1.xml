@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>eventos Level 1</name>
+    <events>
+        <comment>Hoja de eventos generales para inicial el juego en el nivel 1</comment>
+        <event-group description="" sid="645039366286042" title="Level 1">
+            <sub-events>
+                <comment>Configuracion del Player Controller</comment>
+                <include>playerController</include>
+                <comment>Eventos Genericos del mapa</comment>
+                <include>GenericEvents</include>
+                <comment>Comportamiento Generico de los enemigos</comment>
+                <include>enemyGeneral</include>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>SpaceProject</name>
+    <description>space Game</description>
+    <version>1.0.0.0</version>
+    <author>Mirko</author>
+    <author-email>gonzalez.mirko91@gmail.com</author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mirko.spaceProject</app-id>
+    <unique-id>2hoorsjqdtdo6</unique-id>
+    <saved-with-version>23900</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>480</width>
+        <height>800</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Player">
+            <object-type name="Nave" sid="184337624662710">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="838390746264787" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="playerCollider" sid="591148255633459">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="8Direction" sid="663824055685017">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="219688411627726" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="bullet" sid="273255642894658">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="992580750828318">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="888142163577694" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.4">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="World">
+            <object-type name="generatorSpaceTrigger" sid="910089795546471">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="455526617713272">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="838866452670287" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="generatorLevel2" sid="114818871671766">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="837951823001292" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="endEnemy" sid="480211097523088">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="467807099938738" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Enemy">
+            <object-type name="enemyLvl1" sid="697815688387535">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="712712241812910">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="376165915896688" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="bossLevel1" sid="901335342363118">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="539581708583321" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="-0.06" y="0.124" />
+                            <image-point name="Imagepoint 2" x="-0.08" y="0.228" />
+                            <image-point name="Imagepoint 3" x="-0.06" y="0.364" />
+                            <image-point name="Imagepoint 4" x="-0.08" y="0.584" />
+                            <image-point name="Imagepoint 5" x="-0.056" y="0.764" />
+                            <image-point name="Imagepoint 6" x="0.036" y="0.952" />
+                            <image-point name="Imagepoint 7" x="0.3" y="0.976" />
+                            <image-point name="Imagepoint 8" x="0.52" y="0.968" />
+                            <image-point name="Imagepoint 9" x="0.764" y="0.968" />
+                            <image-point name="Imagepoint 10" x="0.992" y="0.9" />
+                            <image-point name="Imagepoint 11" x="1.036" y="0.768" />
+                            <image-point name="Imagepoint 12" x="1.036" y="0.644" />
+                            <image-point name="Imagepoint 13" x="1.032" y="0.44" />
+                            <image-point name="Imagepoint 14" x="1.044" y="0.284" />
+                            <image-point name="Imagepoint 15" x="1.024" y="0.084" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="enemyLevel2" sid="738583790696557">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="204213930268114">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="Sine" sid="558131953828281">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="351752070511506" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="enemyLevel3" sid="395680841054739">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="701453587954540" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-type name="Mouse" sid="179195989357851">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Touch" sid="662687259080937">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Keyboard" sid="575854659569202">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Function" sid="147699973274059">
+            <plugin id="Function" />
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="enemy" plugin-id="Sprite" sid="337523694593604">
+            <members>
+                <member>bossLevel1</member>
+                <member>enemyLevel2</member>
+                <member>enemyLevel3</member>
+                <member>enemyLvl1</member>
+            </members>
+        </family>
+    </families>
+    <layout-folder>
+        <layout-folder name="Level1">
+            <layout>Level1.xml</layout>
+        </layout-folder>
+    </layout-folder>
+    <event-folder>
+        <event-folder name="Level1">
+            <event-sheet>eventos Level 1.xml</event-sheet>
+        </event-folder>
+        <event-folder name="Player">
+            <event-sheet>playerController.xml</event-sheet>
+        </event-folder>
+        <event-folder name="Enemy">
+            <event-folder name="eLevel1">
+                <event-sheet>enemyLevel1.xml</event-sheet>
+            </event-folder>
+            <event-folder name="enemyGeneral">
+                <event-sheet>enemyGeneral.xml</event-sheet>
+            </event-folder>
+        </event-folder>
+        <event-folder name="General">
+            <event-sheet>GenericEvents.xml</event-sheet>
+        </event-folder>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="2" />
+        <global-instance type="Touch" uid="3">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="4" />
+        <global-instance type="Function" uid="10" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

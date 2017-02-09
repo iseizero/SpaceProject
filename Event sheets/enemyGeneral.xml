@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>enemyGeneral</name>
+    <events>
+        <event-block sid="962284674412197">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="248256752585569" type="bullet">
+                    <param id="0" name="Object">enemy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="576084432875494" type="enemy" />
+                <action id="-9" name="Destroy" sid="892268168554872" type="bullet" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

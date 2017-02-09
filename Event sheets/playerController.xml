@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>playerController</name>
+    <events>
+        <comment>Configuraciones generales al iniciar el Layout</comment>
+        <event-group description="" sid="464178970500478" title="Config General">
+            <sub-events>
+                <event-block sid="395027385679219">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="275297204799560" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="662049052999364" type="Nave">
+                            <param id="0" name="Object">playerCollider</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>Controlador Player Mediante touch</comment>
+        <event-group description="" sid="583134779794851" title="Touch Controller">
+            <sub-events>
+                <event-block any="1" sid="256009174542260">
+                    <conditions>
+                        <condition disabled="1" id="14" name="On tap" sid="154189660884659" type="Touch" />
+                        <condition id="0" name="On click" sid="578525216934361" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="252590394205505" type="Nave">
+                            <param id="0" name="Object">bullet</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="629084965904519" type="bullet">
+                            <param id="0" name="Angle">-90</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>Controlador Player por Teclado</comment>
+        <event-group description="" sid="473651434651525" title="Key Controller">
+            <sub-events>
+                <event-block sid="889926868405806">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="943997645523662" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="753982928770006" type="playerCollider">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="722719532745387">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="830012725282307" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="696520912069147" type="playerCollider">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="141810453255825">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="838109913851275" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="524871316009483" type="playerCollider">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="789992493919290">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="664243370279112" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="154743915412974" type="playerCollider">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

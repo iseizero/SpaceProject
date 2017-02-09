@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GenericEvents</name>
+    <events>
+        <variable constant="0" name="navesLevel1" sid="694414543247653" static="0" type="number">11</variable>
+        <event-group description="" sid="188070312400738" title="GeneradorNaves">
+            <sub-events>
+                <event-block sid="533056329710862">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="447882970892089" type="System">
+                            <param id="0" name="Interval (seconds)">int(random(1.0,2.0))</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="314300733644887" type="generatorSpaceTrigger">
+                            <param id="0" name="Object">enemyLvl1</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="321769486997278" type="System">
+                            <param id="0" name="Variable">navesLevel1</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="969378427632144">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="490466065789244" type="System">
+                            <param id="0" name="Object">enemy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="762227853431483" type="Function">
+                            <param id="0" name="Name">&quot;setAngleEnemy&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="356045184142387">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="596820932105658" type="System">
+                            <param id="0" name="Variable">navesLevel1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="133928611509460" type="generatorSpaceTrigger" />
+                        <action id="0" name="Call function" sid="570794878689833" type="Function">
+                            <param id="0" name="Name">&quot;createEnemyLevel2&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="284413199860422">
+                    <conditions>
+                        <condition id="0" name="On function" sid="799339270752714" type="Function">
+                            <param id="0" name="Name">&quot;createEnemyLevel2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="636812812186500">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="991248054706976" type="System">
+                                    <param id="0" name="Interval (seconds)">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="802490502429177" type="generatorLevel2">
+                                    <param id="0" name="Object">enemyLevel2</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="687263940211379">
+                    <conditions>
+                        <condition id="0" name="On function" sid="210398570971853" type="Function">
+                            <param id="0" name="Name">&quot;setAngleEnemy&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="747803784798379" type="enemyLvl1">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="529326097804032" type="enemyLevel2">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="123210699245992">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="502303375726985" type="enemy">
+                            <param id="0" name="Object">endEnemy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="904222967510214" type="enemy" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
