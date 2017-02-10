@@ -20,6 +20,7 @@
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -62,6 +63,9 @@
                 <behaviors>
                     <behavior-type name="8Direction" sid="663824055685017">
                         <behavior id="EightDir" />
+                    </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="618930731818804">
+                        <behavior id="bound" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
@@ -114,6 +118,11 @@
             </object-type>
             <object-type name="generatorLevel2" sid="114818871671766">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="612796456622982">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="837951823001292" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -124,6 +133,19 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="467807099938738" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="generatorSpaceTriggerLevel3" sid="338339945073601">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="815027516714459">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="975893051023490" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
@@ -185,6 +207,11 @@
             </object-type>
             <object-type name="enemyLevel3" sid="395680841054739">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="500990385724075">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="701453587954540" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -217,7 +244,7 @@
     </families>
     <layout-folder>
         <layout-folder name="Level1">
-            <layout>Level1.xml</layout>
+            <layout>generatorSpaceTriggerLevel3.xml</layout>
         </layout-folder>
     </layout-folder>
     <event-folder>

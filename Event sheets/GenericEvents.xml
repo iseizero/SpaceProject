@@ -3,7 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>GenericEvents</name>
     <events>
-        <variable constant="0" name="navesLevel1" sid="694414543247653" static="0" type="number">11</variable>
+        <variable constant="0" name="navelLevel2" sid="953901520854779" static="0" type="number">3</variable>
+        <variable constant="0" name="navesLevel1" sid="694414543247653" static="0" type="number">3</variable>
         <event-group description="" sid="188070312400738" title="GeneradorNaves">
             <sub-events>
                 <event-block sid="533056329710862">
@@ -41,41 +42,17 @@
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="596820932105658" type="System">
                             <param id="0" name="Variable">navesLevel1</param>
-                            <param id="1" name="Comparison">0</param>
+                            <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="133928611509460" type="generatorSpaceTrigger" />
-                        <action id="0" name="Call function" sid="570794878689833" type="Function">
+                        <action id="0" name="Call function" sid="909844405404527" type="Function">
                             <param id="0" name="Name">&quot;createEnemyLevel2&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="284413199860422">
-                    <conditions>
-                        <condition id="0" name="On function" sid="799339270752714" type="Function">
-                            <param id="0" name="Name">&quot;createEnemyLevel2&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="636812812186500">
-                            <conditions>
-                                <condition id="-6" name="Every X seconds" sid="991248054706976" type="System">
-                                    <param id="0" name="Interval (seconds)">2</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Spawn another object" sid="802490502429177" type="generatorLevel2">
-                                    <param id="0" name="Object">enemyLevel2</param>
-                                    <param id="1" name="Layer">&quot;Game&quot;</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="687263940211379">
                     <conditions>
@@ -101,6 +78,58 @@
                     <actions>
                         <action id="-9" name="Destroy" sid="904222967510214" type="enemy" />
                     </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="456252499165351" title="Funciones Generales">
+            <sub-events>
+                <event-block sid="985734164058153">
+                    <conditions>
+                        <condition id="0" name="On function" sid="273102623641435" type="Function">
+                            <param id="0" name="Name">&quot;createEnemyLevel3&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="575504106915173">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="753337495598499" type="System">
+                                    <param id="0" name="Interval (seconds)">int(random(1.0,2.0))</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="179688047504118" type="generatorSpaceTriggerLevel3">
+                                    <param id="0" name="Object">enemyLevel3</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="541655900438172">
+                    <conditions>
+                        <condition id="0" name="On function" sid="179416930423528" type="Function">
+                            <param id="0" name="Name">&quot;createEnemyLevel2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="470926919376684">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="455547171556216" type="System">
+                                    <param id="0" name="Interval (seconds)">int(random(1.0,2.0))</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="404259956519438" type="generatorLevel2">
+                                    <param id="0" name="Object">enemyLevel2</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
