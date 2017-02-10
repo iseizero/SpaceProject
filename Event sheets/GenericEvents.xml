@@ -5,35 +5,20 @@
     <events>
         <variable constant="0" name="navelLevel2" sid="953901520854779" static="0" type="number">3</variable>
         <variable constant="0" name="navesLevel1" sid="694414543247653" static="0" type="number">3</variable>
+        <comment>Generador de naves en base a los eventos de los contadores globales. </comment>
         <event-group description="" sid="188070312400738" title="GeneradorNaves">
             <sub-events>
-                <event-block sid="533056329710862">
+                <event-block sid="332145754073992">
                     <conditions>
-                        <condition id="-6" name="Every X seconds" sid="447882970892089" type="System">
-                            <param id="0" name="Interval (seconds)">int(random(1.0,2.0))</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="314300733644887" type="generatorSpaceTrigger">
-                            <param id="0" name="Object">enemyLvl1</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
-                        <action id="-11" name="Subtract from" sid="321769486997278" type="System">
+                        <condition id="-14" name="Compare variable" sid="419560643475614" type="System">
                             <param id="0" name="Variable">navesLevel1</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="969378427632144">
-                    <conditions>
-                        <condition id="-11" name="For Each" sid="490466065789244" type="System">
-                            <param id="0" name="Object">enemy</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="762227853431483" type="Function">
-                            <param id="0" name="Name">&quot;setAngleEnemy&quot;</param>
+                        <action id="0" name="Call function" sid="196113507119086" type="Function">
+                            <param id="0" name="Name">&quot;createEnemyLevel1&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
@@ -46,14 +31,14 @@
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="133928611509460" type="generatorSpaceTrigger" />
-                        <action id="0" name="Call function" sid="909844405404527" type="Function">
-                            <param id="0" name="Name">&quot;createEnemyLevel2&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
+                    <actions />
                 </event-block>
+            </sub-events>
+        </event-group>
+        <comment>Funciones para setear y generar enemigos</comment>
+        <event-group description="" sid="456252499165351" title="Funciones Generales">
+            <sub-events>
+                <comment>Cambiamos el angulo de los enemigos para que bajen por la pantalla</comment>
                 <event-block sid="687263940211379">
                     <conditions>
                         <condition id="0" name="On function" sid="210398570971853" type="Function">
@@ -67,22 +52,11 @@
                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="529326097804032" type="enemyLevel2">
                             <param id="0" name="Angle">90</param>
                         </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="716476638805676" type="enemyLevel3">
+                            <param id="0" name="Angle">90</param>
+                        </action>
                     </actions>
                 </event-block>
-                <event-block sid="123210699245992">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="502303375726985" type="enemy">
-                            <param id="0" name="Object">endEnemy</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="904222967510214" type="enemy" />
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="456252499165351" title="Funciones Generales">
-            <sub-events>
                 <event-block sid="985734164058153">
                     <conditions>
                         <condition id="0" name="On function" sid="273102623641435" type="Function">
@@ -124,6 +98,30 @@
                             <actions>
                                 <action id="0" name="Spawn another object" sid="404259956519438" type="generatorLevel2">
                                     <param id="0" name="Object">enemyLevel2</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="634340311206199">
+                    <conditions>
+                        <condition id="0" name="On function" sid="897604066471733" type="Function">
+                            <param id="0" name="Name">&quot;createEnemyLevel1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="977255374524075">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="672560620193935" type="System">
+                                    <param id="0" name="Interval (seconds)">int(random(1.0,2.0))</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="639786601707900" type="generatorSpaceTrigger">
+                                    <param id="0" name="Object">enemyLvl1</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>

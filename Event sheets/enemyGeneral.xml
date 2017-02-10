@@ -3,16 +3,44 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>enemyGeneral</name>
     <events>
-        <event-block sid="962284674412197">
-            <conditions>
-                <condition id="1" name="Is overlapping another object" sid="248256752585569" type="bullet">
-                    <param id="0" name="Object">enemy</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="576084432875494" type="enemy" />
-                <action id="-9" name="Destroy" sid="892268168554872" type="bullet" />
-            </actions>
-        </event-block>
+        <comment>Acciones generadas por grupos de enemigos</comment>
+        <event-group description="" sid="527891800702438" title="Acciones generales Enemigas">
+            <sub-events>
+                <event-block sid="170091421431061">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="879848654467946" type="System">
+                            <param id="0" name="Object">enemy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="926515979790631" type="Function">
+                            <param id="0" name="Name">&quot;setAngleEnemy&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="102230949763258">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="744100865759292" type="enemy">
+                            <param id="0" name="Object">endEnemy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="612236502668022" type="enemy" />
+                    </actions>
+                </event-block>
+                <event-block sid="962284674412197">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="248256752585569" type="bullet">
+                            <param id="0" name="Object">enemy</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="576084432875494" type="enemy" />
+                        <action id="-9" name="Destroy" sid="892268168554872" type="bullet" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

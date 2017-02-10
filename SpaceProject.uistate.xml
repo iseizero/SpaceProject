@@ -10,11 +10,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">generatorSpaceTriggerLevel3</layout>
-        <event-sheet order="1">eventos Level 1</event-sheet>
-        <event-sheet order="2">playerController</event-sheet>
-        <event-sheet order="3">GenericEvents</event-sheet>
-        <event-sheet order="4">enemyGeneral</event-sheet>
+        <layout order="0">generatorSpaceTriggerLevel3</layout>
+        <event-sheet active="1" order="1">eventos Level 1</event-sheet>
+        <event-sheet order="2">GenericEvents</event-sheet>
+        <event-sheet order="3">enemyGeneral</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -50,6 +49,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/generatorLevel2/" />
         <folder expanded="1" path="animation-folder/endEnemy/" />
         <folder expanded="1" path="animation-folder/generatorSpaceTriggerLevel3/" />
+        <folder expanded="1" path="animation-folder/startControl/" />
         <folder expanded="1" path="animation-folder/enemyLvl1/" />
         <folder expanded="1" path="animation-folder/bossLevel1/" />
         <folder expanded="1" path="animation-folder/enemyLevel2/" />
